@@ -1,0 +1,103 @@
+2019-07-01 00:29:02.562  WARN [users-ws,,,] 24476 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h28s854ms).
+2019-07-01 00:29:08.575  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 02:29:59.754  WARN [users-ws,,,] 24476 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h27s89ms).
+2019-07-01 04:15:10.852  WARN [users-ws,,,] 24476 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h44m41s94ms).
+2019-07-01 04:18:16.748  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 04:23:16.761  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 04:28:16.770  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 04:33:16.778  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 04:38:16.790  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 04:43:16.781  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 04:48:16.794  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 04:53:16.799  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 04:58:16.812  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 05:03:16.818  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 05:08:16.832  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 05:13:16.846  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 06:32:05.362  WARN [users-ws,,,] 24476 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h17m23s889ms).
+2019-07-01 07:11:45.113  WARN [users-ws,,,] 24476 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m39s610ms).
+2019-07-01 07:35:33.589  WARN [users-ws,,,] 24476 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m18s461ms).
+2019-07-01 07:36:08.938  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 07:41:08.948  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 07:46:08.956  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 07:51:08.965  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 07:56:08.973  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:01:08.982  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:06:08.983  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:11:08.992  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:16:09.003  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:21:09.013  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:26:09.025  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:31:09.032  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:36:09.030  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:41:09.041  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:46:09.058  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:51:09.073  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 08:56:09.083  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:01:09.093  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:06:09.060  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:11:09.072  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:16:09.082  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:21:09.098  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:26:09.122  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:31:09.141  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:36:09.156  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:41:09.169  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:46:09.178  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:51:09.192  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 09:56:09.206  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:01:09.205  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:06:09.220  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:11:09.234  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:16:09.241  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:21:09.242  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:26:09.254  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:31:09.264  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:36:09.261  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:41:09.276  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:46:09.288  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:51:09.287  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 10:56:09.300  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:01:09.315  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:06:09.334  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:11:09.336  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:16:09.352  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:21:09.369  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:26:09.370  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:31:09.389  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:36:09.403  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:41:09.401  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:46:09.414  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:51:09.428  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 11:56:09.425  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 12:01:09.439  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 12:06:09.454  INFO [users-ws,,,] 24476 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-07-01 12:10:11.541  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USERS-WS with eureka with status DOWN
+2019-07-01 12:10:11.542  WARN [users-ws,,,] 24476 --- [Thread-13] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1562008211541, current=DOWN, previous=UP]
+2019-07-01 12:10:11.542  INFO [users-ws,,,] 24476 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-WS/users-ws:e5a1844d803b9ab8fba5d52eb630d377: registering service...
+2019-07-01 12:10:11.554  INFO [users-ws,,,] 24476 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-WS/users-ws:e5a1844d803b9ab8fba5d52eb630d377 - registration status: 204
+2019-07-01 12:10:11.626  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-07-01 12:10:12.202  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-07-01 12:10:12.203  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped inbound.springCloudBus.anonymous.LMQrd1WoSpm0HP9lycBDnQ
+2019-07-01 12:10:12.207  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.LMQrd1WoSpm0HP9lycBDnQ.errors' has 1 subscriber(s).
+2019-07-01 12:10:12.208  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.LMQrd1WoSpm0HP9lycBDnQ.errors' has 0 subscriber(s).
+2019-07-01 12:10:12.218  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-01 12:10:12.218  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2019-07-01 12:10:12.218  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2019-07-01 12:10:12.223  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-01 12:10:12.238  INFO [users-ws,,,] 24476 --- [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-01 12:10:12.245  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-07-01 12:10:13.261  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBus.anonymous.LMQrd1WoSpm0HP9lycBDnQ.errors
+2019-07-01 12:10:13.261  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBusOutput
+2019-07-01 12:10:13.261  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBusInput
+2019-07-01 12:10:13.261  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2019-07-01 12:10:13.261  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2019-07-01 12:10:13.261  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2019-07-01 12:10:13.262  INFO [users-ws,,,] 24476 --- [Thread-13] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@783947d0
+2019-07-01 12:10:13.262  INFO [users-ws,,,] 24476 --- [Thread-13] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2019-07-01 12:10:13.289  WARN [users-ws,,,] 24476 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@6b3f9dca}] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eurekaRibbonClientConfiguration': Unsatisfied dependency expressed through field 'eurekaConfig'; nested exception is org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaInstanceConfigBean': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2019-07-01 12:10:16.264  INFO [users-ws,,,] 24476 --- [Thread-13] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2019-07-01 12:10:16.269  INFO [users-ws,,,] 24476 --- [Thread-13] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-WS/users-ws:e5a1844d803b9ab8fba5d52eb630d377 - deregister  status: 200
+2019-07-01 12:10:16.276  INFO [users-ws,,,] 24476 --- [Thread-13] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-07-01 12:10:16.276  INFO [users-ws,,,] 24476 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-07-01 12:10:16.281  INFO [users-ws,,,] 24476 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
