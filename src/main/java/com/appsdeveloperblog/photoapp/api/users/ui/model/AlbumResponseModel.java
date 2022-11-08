@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.appsdeveloperblog.photoapp.api.users.ui.model;
-
+ 
 /**
  *
  * @author skargopolov
@@ -12,8 +12,7 @@ package com.appsdeveloperblog.photoapp.api.users.ui.model;
 public class AlbumResponseModel {
     private String albumId;
     private String userId; 
-    private String name;
-    private String description;
+    private String title;
 
     /**
      * @return the id
@@ -43,32 +42,19 @@ public class AlbumResponseModel {
         this.userId = userId;
     }
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+	/**
+	 * @param title the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * @param description the description to set
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
     
 }

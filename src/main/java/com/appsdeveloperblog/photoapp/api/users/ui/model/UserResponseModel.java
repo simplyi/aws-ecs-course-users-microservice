@@ -7,12 +7,15 @@ package com.appsdeveloperblog.photoapp.api.users.ui.model;
  
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class UserResponseModel {
 
     private String userId;
     private String firstName;
     private String lastName;
     private String email;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<AlbumResponseModel> albums;
 
     /**

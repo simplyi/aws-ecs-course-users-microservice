@@ -5,157 +5,157 @@
  */
 package com.appsdeveloperblog.photoapp.api.users.service;
 
-import com.appsdeveloperblog.photoapp.api.users.data.AlbumsServiceClient;
-import com.appsdeveloperblog.photoapp.api.users.data.UserEntity;
-import com.appsdeveloperblog.photoapp.api.users.data.UsersRepository;
-import com.appsdeveloperblog.photoapp.api.users.shared.UserDto;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
+
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.modelmapper.convention.MatchingStrategies;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.appsdeveloperblog.photoapp.api.users.data.UserEntity;
+import com.appsdeveloperblog.photoapp.api.users.data.UsersRepository;
 import com.appsdeveloperblog.photoapp.api.users.shared.JwtUtil;
+import com.appsdeveloperblog.photoapp.api.users.shared.UserDto;
 import com.appsdeveloperblog.photoapp.api.users.shared.UsersServiceException;
 import com.appsdeveloperblog.photoapp.api.users.ui.model.AlbumResponseModel;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import feign.FeignException;
-import java.lang.reflect.Type;
-import java.util.List;
-import org.modelmapper.TypeToken;
-import org.modelmapper.convention.MatchingStrategies;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.core.env.Environment;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 public class UsersServiceImpl implements UsersService {
 
-    BCryptPasswordEncoder bCryptPasswordEncoder;
-    UsersRepository usersRepository;
-    JwtUtil jwtUtil;
-    RestTemplate restTemplate;
-    Environment environment;
-    AlbumsServiceClient albumsServiceClient;
-    
-    Logger logger = LoggerFactory.getLogger(this.getClass());
+	BCryptPasswordEncoder bCryptPasswordEncoder;
+	UsersRepository usersRepository;
+	JwtUtil jwtUtil;
+	RestTemplate restTemplate;
+	Environment environment;
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    public UsersServiceImpl(BCryptPasswordEncoder bCryptPasswordEncoder,
-            UsersRepository usersRepository,  
-            JwtUtil jwtUtil, 
-            RestTemplate restTemplate,
-            Environment environment,
-            AlbumsServiceClient albumsServiceClient) {
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-        this.usersRepository = usersRepository;
-        this.jwtUtil = jwtUtil;
-        this.restTemplate = restTemplate;
-        this.environment = environment;
-        this.albumsServiceClient = albumsServiceClient;
-    }
+	@Autowired
+	public UsersServiceImpl(BCryptPasswordEncoder bCryptPasswordEncoder, UsersRepository usersRepository,
+			JwtUtil jwtUtil, RestTemplate restTemplate, Environment environment) {
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+		this.usersRepository = usersRepository;
+		this.jwtUtil = jwtUtil;
+		this.restTemplate = restTemplate;
+		this.environment = environment;
+	}
 
-    @Override
-    public UserDto createUser(UserDto userDto) {
+	@Override
+	public UserDto createUser(UserDto userDto) {
 
-        ModelMapper modelMapper = new ModelMapper();
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-        
-        UserEntity userEntity = modelMapper.map(userDto, UserEntity.class);
-               
-        userEntity.setUserId(UUID.randomUUID().toString());
-        userEntity.setEncryptedPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
-        
-        usersRepository.save(userEntity);
+		ModelMapper modelMapper = new ModelMapper();
+		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-        return modelMapper.map(userEntity, UserDto.class);
-    }
+		UserEntity userEntity = modelMapper.map(userDto, UserEntity.class);
 
-    
-    @Override
-    public UserDto getUserByEmail(String email) {
-        UserEntity userEntity = usersRepository.findByEmail(email);
+		userEntity.setUserId(UUID.randomUUID().toString());
+		userEntity.setEncryptedPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
 
-        if (userEntity == null) {
-            throw new UsernameNotFoundException(email);
-        }
+		usersRepository.save(userEntity);
 
-        return new ModelMapper().map(userEntity, UserDto.class);
-    }
+		return modelMapper.map(userEntity, UserDto.class);
+	}
 
-    @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        UserEntity userEntity = usersRepository.findByEmail(email);
+	@Override
+	public UserDto getUserByEmail(String email) {
+		UserEntity userEntity = usersRepository.findByEmail(email);
 
-        if (userEntity == null) {
-            throw new UsernameNotFoundException(email);
-        }
+		if (userEntity == null) {
+			throw new UsernameNotFoundException(email);
+		}
 
-        return new User(userEntity.getEmail(), userEntity.getEncryptedPassword(),
-                true, // Email verification status
-                true, true,
-                true, new ArrayList<>());
-    }
+		return new ModelMapper().map(userEntity, UserDto.class);
+	}
 
-    @Override
-    public void deleteUser(String userId, String authorizationHeader) {
-        
-        String userIdFromHeader = jwtUtil.getUserId(authorizationHeader);
-        
-        if(!userId.equalsIgnoreCase(userIdFromHeader))
-        {
-            throw new UsersServiceException("Operation not allowed");
-        }
-   
-        UserEntity userEntity = usersRepository.findByUserId(userId);
-        
-        if(userEntity == null) throw new UsersServiceException("User not found");
-        
-        usersRepository.delete(userEntity);
-         
-    }
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		UserEntity userEntity = usersRepository.findByEmail(email);
 
-    @Override
-    public UserDto getUserByUserId(String userId) throws UsersServiceException {
-        UserEntity userEntity = usersRepository.findByUserId(userId);     
-        if(userEntity == null) throw new UsersServiceException(environment.getProperty("users.exceptions.user-not-found"));
-        
-        UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
-        
-              /*  String albumsUrl = String.format(environment.getProperty("albums.url"), userId);
- 
-         ResponseEntity<List<AlbumResponseModel>> albumsListResponse = 
-                restTemplate.exchange(albumsUrl, HttpMethod.GET, null, new ParameterizedTypeReference<List<AlbumResponseModel>>(){});
-        List<AlbumResponseModel> albumsList = albumsListResponse.getBody(); 
-        return albumsList;*/
-       
- 
-        List<AlbumResponseModel> albumsList = albumsServiceClient.getAlbums(userId);
-        userDto.setAlbums(albumsList);
-        
-        logger.info("Albums web service endpoint called and recieved " + albumsList.size() + " items");
-  
-        return userDto;
-    }
- 
-    @Override
-    public List<UserDto> getUsers() {
-        List<UserEntity> userEntities = (List<UserEntity>)usersRepository.findAll();
-        
-        if(userEntities == null || userEntities.isEmpty()) return new ArrayList<>();
-        
-        Type listType = new TypeToken<List<UserDto>>(){}.getType();
- 
-        List<UserDto> returnValue = new ModelMapper().map(userEntities, listType);
-        
-        return returnValue;
-    }
- 
+		if (userEntity == null) {
+			throw new UsernameNotFoundException(email);
+		}
+
+		return new User(userEntity.getEmail(), userEntity.getEncryptedPassword(), true, // Email verification status
+				true, true, true, new ArrayList<>());
+	}
+
+	@Override
+	public void deleteUser(String userId, String authorizationHeader) {
+
+		String userIdFromHeader = jwtUtil.getUserId(authorizationHeader);
+
+		if (!userId.equalsIgnoreCase(userIdFromHeader)) {
+			throw new UsersServiceException("Operation not allowed");
+		}
+
+		UserEntity userEntity = usersRepository.findByUserId(userId);
+
+		if (userEntity == null)
+			throw new UsersServiceException("User not found");
+
+		usersRepository.delete(userEntity);
+
+	}
+
+	@Override
+	public UserDto getUserByUserId(String userId) throws UsersServiceException {
+		UserEntity userEntity = usersRepository.findByUserId(userId);
+		if (userEntity == null)
+			throw new UsersServiceException(environment.getProperty("users.exceptions.user-not-found"));
+
+		return new ModelMapper().map(userEntity, UserDto.class);
+	}
+
+	@Override
+	public List<UserDto> getUsers() {
+		List<UserEntity> userEntities = (List<UserEntity>) usersRepository.findAll();
+
+		if (userEntities == null || userEntities.isEmpty())
+			return new ArrayList<>();
+
+		Type listType = new TypeToken<List<UserDto>>() {
+		}.getType();
+
+		List<UserDto> returnValue = new ModelMapper().map(userEntities, listType);
+
+		return returnValue;
+	}
+
+	@Override
+	public List<AlbumResponseModel> getUserAlbums(String userId, String jwt) {
+
+		String albumsUrl = String.format(environment.getProperty("albums.url"), userId);
+
+		HttpHeaders httpHeaders = new HttpHeaders();
+		httpHeaders.add("Authorization", "Bearer " + jwt);
+		httpHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+
+		ResponseEntity<List<AlbumResponseModel>> albumsListResponse = restTemplate.exchange(albumsUrl, HttpMethod.GET,
+				new HttpEntity<>(httpHeaders), new ParameterizedTypeReference<List<AlbumResponseModel>>() {
+				});
+
+		logger.info(
+				"Albums web service endpoint called and recieved " + albumsListResponse.getBody().size() + " items");
+
+		return albumsListResponse.getBody();
+	}
+
 }
