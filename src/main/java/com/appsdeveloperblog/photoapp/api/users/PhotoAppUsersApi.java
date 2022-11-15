@@ -9,13 +9,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class PhotoAppApiApplication {
+public class PhotoAppUsersApi {
 
     @Autowired
     Environment environment;
 
     public static void main(String[] args) {
-        SpringApplication.run(PhotoAppApiApplication.class, args);
+        SpringApplication.run(PhotoAppUsersApi.class, args);
     }
 
     @Bean
