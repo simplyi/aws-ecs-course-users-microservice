@@ -6,6 +6,9 @@
 package com.appsdeveloperblog.photoapp.api.users.ui.controllers;
 
 import java.lang.reflect.Type;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -28,6 +31,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.appsdeveloperblog.photoapp.api.users.service.UsersService;
@@ -54,15 +58,6 @@ public class UsersController {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@GetMapping("/status/check")
-	public String status(@RequestHeader("Authorization") String authorizationHeader) {
-		String returnValue = "Working on port " + port + " with token " + token + ". Token from environment "
-				+ environment.getProperty("token.secret") + "authorizationHeader = " + authorizationHeader
-				+ ". My application environment = " + environment.getProperty("myapplication.environment");
-		log.info(returnValue);
-		return returnValue;
-	}
-
 	@PostMapping
 	public ResponseEntity<UserResponseModel> createUser(@Valid @RequestBody CreateUserRequestModel requestModel) {
 		ModelMapper modelMapper = new ModelMapper();
@@ -79,21 +74,30 @@ public class UsersController {
 	@GetMapping("/{userId}")
 	@PostAuthorize("principal == returnObject.body.userId")
 	public ResponseEntity<UserResponseModel> getUser(@PathVariable("userId") String userId,
-			@RequestHeader("Authorization") String authorization) {
+			@RequestHeader("Authorization") String authorization,
+			@RequestParam(value = "fields", required = false) String fields) {
 
 		UserDto userDto = usersService.getUserByUserId(userId);
 
 		UserResponseModel returnValue = new ModelMapper().map(userDto, UserResponseModel.class);
-		
-		List<AlbumResponseModel> albums = usersService.getUserAlbums(userId, authorization);
-		returnValue.setAlbums(albums);
- 
+
+		// Include albums if requested
+		if (fields != null) {
+			String[] includeFields = fields.split(",");
+			for (String field : includeFields) {
+				if (field.trim().equalsIgnoreCase("albums")) {
+					List<AlbumResponseModel> albums = usersService.getUserAlbums(userId, authorization);
+					returnValue.setAlbums(albums);
+					break;
+				}
+			}
+		}
+
 		return ResponseEntity.status(HttpStatus.OK).body(returnValue);
 	}
 
 	@GetMapping()
-	public ResponseEntity<List<UserResponseModel>> getUsers(
-			@RequestHeader("Authorization") String authorization) {
+	public ResponseEntity<List<UserResponseModel>> getUsers(@RequestHeader("Authorization") String authorization) {
 
 		List<UserDto> userDtoList = usersService.getUsers();
 
@@ -114,4 +118,28 @@ public class UsersController {
 
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
+
+	@GetMapping("/status/check")
+	public String status(@RequestHeader("Authorization") String authorizationHeader) {
+		String returnValue = "Working on port " + port + " with token " + token + ". Token from environment "
+				+ environment.getProperty("token.secret") + "authorizationHeader = " + authorizationHeader
+				+ ". My application environment = " + environment.getProperty("myapplication.environment");
+		log.info(returnValue);
+		return returnValue;
+	}
+
+	@GetMapping("/ip")
+	public String getIp() {
+		String returnValue;
+
+		try {
+			InetAddress ipAddr = InetAddress.getLocalHost();
+			returnValue = ipAddr.getHostAddress();
+		} catch (UnknownHostException ex) {
+			returnValue = ex.getLocalizedMessage();
+		}
+
+		return returnValue;
+	}
+
 }
