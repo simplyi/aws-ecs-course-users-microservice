@@ -85,7 +85,7 @@ public class UsersController {
 
 		UserResponseModel returnValue = new ModelMapper().map(userDto, UserResponseModel.class);
 		
-		List<AlbumResponseModel> albums = usersService.getUserAlbums(userId, authorization);
+		List<AlbumResponseModel> albums = usersService.getUserAlbums(authorization);
 		returnValue.setAlbums(albums);
  
 		return ResponseEntity.status(HttpStatus.OK).body(returnValue);
