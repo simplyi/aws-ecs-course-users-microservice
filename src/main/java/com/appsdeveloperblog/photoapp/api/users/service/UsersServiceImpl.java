@@ -140,10 +140,10 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public List<AlbumResponseModel> getUserAlbums(String userId, String jwt) {
+	public List<AlbumResponseModel> getUserAlbums(String jwt) {
 
-		String albumsUrl = String.format(environment.getProperty("albums.url"), userId);
-		logger.info("albumsUrl = " + albumsUrl);
+		String albumsUrl = environment.getProperty("albums.url");
+        logger.info("albumsUrl = " + albumsUrl);
 
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.add("Authorization", "Bearer " + jwt);

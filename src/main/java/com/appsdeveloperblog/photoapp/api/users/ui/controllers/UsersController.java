@@ -86,7 +86,7 @@ public class UsersController {
 			String[] includeFields = fields.split(",");
 			for (String field : includeFields) {
 				if (field.trim().equalsIgnoreCase("albums")) {
-					List<AlbumResponseModel> albums = usersService.getUserAlbums(userId, authorization);
+					List<AlbumResponseModel> albums = usersService.getUserAlbums(authorization);
 					returnValue.setAlbums(albums);
 					break;
 				}
