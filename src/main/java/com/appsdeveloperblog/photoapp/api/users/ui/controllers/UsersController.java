@@ -8,10 +8,7 @@ package com.appsdeveloperblog.photoapp.api.users.ui.controllers;
 import java.lang.reflect.Type;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Arrays;
 import java.util.List;
-
-import javax.validation.Valid;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -21,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,6 +35,8 @@ import com.appsdeveloperblog.photoapp.api.users.shared.UserDto;
 import com.appsdeveloperblog.photoapp.api.users.ui.model.AlbumResponseModel;
 import com.appsdeveloperblog.photoapp.api.users.ui.model.CreateUserRequestModel;
 import com.appsdeveloperblog.photoapp.api.users.ui.model.UserResponseModel;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/users")

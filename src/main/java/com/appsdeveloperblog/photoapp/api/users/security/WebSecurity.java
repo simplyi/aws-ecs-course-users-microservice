@@ -5,8 +5,6 @@
  */
 package com.appsdeveloperblog.photoapp.api.users.security;
 
-import com.appsdeveloperblog.photoapp.api.users.service.UsersService;
-import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,19 +12,18 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import com.appsdeveloperblog.photoapp.api.users.service.UsersService;
+
+@Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)  
+@EnableMethodSecurity(prePostEnabled = true, securedEnabled = true)  
 public class WebSecurity {
 
     private final Environment environment;
@@ -52,12 +49,12 @@ public class WebSecurity {
         AuthenticationManager authenticationManager = authenticationManagerBuilder.build();
         http
                 .cors().and()
-                .csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/users").permitAll()
-                .antMatchers(HttpMethod.POST, "/users/login").permitAll()
-                .antMatchers("/users/ip").permitAll()
-                .antMatchers("/h2-console/**").permitAll()
-                .antMatchers("/actuator/**").permitAll()
+                .csrf().disable().authorizeHttpRequests()
+                .requestMatchers(HttpMethod.POST, "/users").permitAll()
+                .requestMatchers(HttpMethod.POST, "/users/login").permitAll()
+                .requestMatchers("/users/ip").permitAll()
+                .requestMatchers("/h2-console/**").permitAll()
+                .requestMatchers("/actuator/**").permitAll()
 
                 .anyRequest().authenticated().and()
                 .addFilter(getAuthenticationFilter(authenticationManager))
